@@ -25,9 +25,11 @@ const Todo = () => {
             </form>
             <br />
             {todos && (
-                todos.map((todo, ind) => {
-                    return <div style={{marginBottom: "10px"}} key={ind}>{todo}&nbsp;&nbsp;&nbsp;&nbsp;<button onClick={() => handleDelete(todo)}>Delete</button></div>
-                })
+                <ul>
+                    {todos.map((todo, ind) => {
+                        return <li style={{marginBottom: "10px"}} key={ind}>{todo}&nbsp;&nbsp;&nbsp;&nbsp;<button onClick={() => handleDelete(todo)}>Delete</button></li>
+                    })}
+                </ul>
             )}
         </div>
     )
